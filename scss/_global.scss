@@ -9,6 +9,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
   font-family: "Public Sans", sans-serif;
@@ -52,6 +53,7 @@ a:hover {
 //buttons
 button,
 .button {
+  display: inline-block;
   padding: 1.6rem 3.2rem;
   border-radius: 100px;
   font-family: inherit;

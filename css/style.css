@@ -39,6 +39,7 @@ html {
   box-sizing: inherit; }
 
 body {
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
   font-family: "Public Sans", sans-serif;
@@ -67,6 +68,7 @@ a:hover {
 
 button,
 .button {
+  display: inline-block;
   padding: 1.6rem 3.2rem;
   border-radius: 100px;
   font-family: inherit;
@@ -138,7 +140,8 @@ p {
   position: relative;
   background-color: white;
   padding-top: 1.6rem;
-  padding-bottom: 1.6rem; }
+  padding-bottom: 1.6rem;
+  z-index: 1; }
 
 .header__toggle {
   cursor: pointer; }
@@ -153,6 +156,7 @@ p {
       margin-bottom: 4px; }
 
 .header__menu {
+  z-index: 1;
   position: absolute;
   width: calc(100% - 4.8rem);
   border-radius: 0.8rem;
@@ -202,11 +206,13 @@ p {
   top: 0;
   background-image: linear-gradient(#2d314d, transparent);
   opacity: 0;
-  display: none; }
+  display: none;
+  z-index: 1; }
   .header .overlay.fade-in {
     display: block; }
 
 .hero {
+  background-color: #fafafa;
   align-items: center; }
   @media (min-width: 64em) {
     .hero .container {
@@ -286,7 +292,7 @@ p {
 
 .feature {
   text-align: center;
-  background-color: #fafafa; }
+  background-color: #f3f4f6; }
   @media (min-width: 40em) {
     .feature {
       text-align: left; } }
@@ -329,3 +335,115 @@ p {
     @media (min-width: 64em) {
       .feature__description {
         font-size: 1.6rem; } }
+
+.articles {
+  background-color: #fafafa; }
+
+.article__content h2 {
+  color: #2d314d;
+  font-size: 4rem; }
+
+.article__grid {
+  display: grid;
+  gap: 2.4rem;
+  grid-template-columns: 1fr; }
+  @media (min-width: 40em) {
+    .article__grid {
+      grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 64em) {
+    .article__grid {
+      grid-template-columns: repeat(4, 1fr); } }
+
+.article__item {
+  background-color: white;
+  border-radius: 0.8rem;
+  overflow: hidden; }
+  .article__item:hover {
+    box-shadow: 0px 16px 32px rgba(50, 66, 68, 0.158);
+    transition: all 0.2s ease;
+    transform: translateY(-0.8rem); }
+
+.article__image {
+  height: 20rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.article__text {
+  padding: 2.4rem 3.2rem; }
+
+.article__author {
+  font-size: 1rem;
+  color: #9698a6;
+  margin-bottom: 1.6rem; }
+
+.article__title {
+  font-size: 1.6rem;
+  color: #2d314d;
+  margin-bottom: 0.8rem; }
+
+.article__description {
+  font-size: 1.4rem;
+  color: #9698a6; }
+
+.footer {
+  background-color: #2d314d;
+  color: white;
+  padding: 4rem;
+  text-align: center; }
+  @media (min-width: 64em) {
+    .footer {
+      display: grid;
+      justify-items: start;
+      grid-template-columns: repeat(3, 1fr) 2fr;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas: "logo links1 links2 cta" "social links1 links2 copyright"; } }
+  .footer__logo {
+    display: inline-block;
+    margin-bottom: 2.4rem; }
+    @media (min-width: 64em) {
+      .footer__logo {
+        grid-area: logo; } }
+  .footer a {
+    color: white; }
+  .footer__social {
+    margin-bottom: 3.2rem;
+    align-self: end; }
+    .footer__social a:not(:last-child) {
+      display: inline-block;
+      margin-right: 2.4rem; }
+    @media (min-width: 64em) {
+      .footer__social {
+        grid-area: social; } }
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    @media (min-width: 64em) {
+      .footer__links {
+        align-items: start; } }
+    .footer__links a {
+      line-height: 2; }
+  @media (min-width: 64em) {
+    .footer .col-1 {
+      grid-area: links1; } }
+  .footer .col-2 {
+    margin-bottom: 3.2rem; }
+    @media (min-width: 64em) {
+      .footer .col-2 {
+        grid-area: links2; } }
+  .footer__cta a.button {
+    margin-bottom: 3.2rem; }
+  @media (min-width: 64em) {
+    .footer__cta {
+      grid-area: cta;
+      text-align: right;
+      justify-self: end; } }
+  .footer__copyright {
+    font-size: 1.4rem;
+    color: #9698a6; }
+    @media (min-width: 64em) {
+      .footer__copyright {
+        grid-area: copyright;
+        align-self: end;
+        justify-self: end; } }

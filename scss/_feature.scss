@@ -1,6 +1,6 @@
 .feature {
   text-align: center;
-  background-color: $gray-lightest;
+  background-color: $gray-light;
 
   @include breakpoint-up(medium) {
     text-align: left;
