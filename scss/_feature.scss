@@ -1,0 +1,68 @@
+.feature {
+  text-align: center;
+  background-color: $gray-lightest;
+
+  @include breakpoint-up(medium) {
+    text-align: left;
+  }
+
+  h2 {
+    color: $dark-blue;
+    font-size: $fs-32;
+  }
+
+  &__intro {
+    margin-bottom: 6.4rem;
+    @include breakpoint-up(large) {
+      width: 60%;
+    }
+  }
+
+  &__grid {
+    @include breakpoint-up(medium) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    padding: 2.4rem;
+
+    @include breakpoint-up(medium) {
+      flex: 0 0 50%;
+    }
+
+    @include breakpoint-up(large) {
+      flex: 1;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 2.4rem;
+
+    @include breakpoint-up(large) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__title {
+    color: $dark-blue;
+    font-size: $fs-20;
+    margin-bottom: 0.8rem;
+
+    @include breakpoint-up(large) {
+      font-size: $fs-24;
+
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__description {
+    font-size: $fs-14;
+    line-height: 1.6;
+
+    @include breakpoint-up(large) {
+      font-size: $fs-16;
+    }
+  }
+}
